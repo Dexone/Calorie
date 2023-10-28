@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie</title>
+    <style>
+        .m {
+            padding: 5px;
+            width: 235px;
+            font-size: 14px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(77, 77, 77);
+        }
+        input {
+            padding: 20px;
+            margin: 5px;
+            width: 140px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="m">
+        <input class="sto" size="15px"></input>/100гр<br>
+        <input class="ccal" size="15px"></input>ккал<br>
+        <input class="gr" size="15px"></input>грамм
+    </div>
+    <script>
+        document.querySelector(".sto").oninput = myCar
+        document.querySelector(".ccal").oninput = myClick
+        document.querySelector(".gr").oninput = mySoul
+        function myCar() {
+            document.getElementsByClassName('gr')[0].value = null;
+            document.getElementsByClassName('ccal')[0].value = null;
+        }
+        function myClick() {
+            var sto = document.querySelector(".sto").value;
+            var ccal = document.querySelector(".ccal").value;
+            var chet = Math.round(ccal / (sto / 100));
+            document.getElementsByClassName('gr')[0].value = chet
+        }
+        function mySoul() {
+            var sto = document.querySelector(".sto").value;
+            var gr = document.querySelector(".gr").value;
+            var chet = Math.round((sto / 100) * gr);
+            document.getElementsByClassName('ccal')[0].value = chet;
+        }
+    </script>
+
+</body>
+
+</html>
