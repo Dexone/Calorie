@@ -7,93 +7,50 @@
     <link rel="icon" href="calorie.ico">
     <title>Calorie</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
-
-        .lightwindow {
-            border-color: #e0e0e6;
-            border-style: solid;
-            border-width: 1px 1px 0px 1px;
-            width: 270px;
-            height: 35px;
-            padding: 15px;
-            margin-top: 50px;
-            margin-left: auto;
-            margin-right: auto;
-            font-family: 'Orbitron', sans-serif;
-            text-align: center;
-            font-size: 30px;
+        .m {
+            padding: 5px;
+            width: 235px;
+            font-size: 14px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(77, 77, 77);
         }
-
-        .darkWindow {
-            border-color: #e0e0e6;
-            border-style: solid;
-            border-width: 1px;
-            width: 300px;
-            height: 70px;
-            background-color: #fafafc;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-
-
-        .inp {
-            width: 200px;
-            height: 30px;
-            border-radius: 20px 0px 0px 20px;
-            border-color: #e0e0e6;
-            border-style: solid;
-            border-width: 1px;
-            margin: 12px 0px 12px 12px;
-            font-size: 10px;
-        }
-
-        .buttAdd {
-            color: #a3a4a6;
-            height: 30px;
-            width: 30px;
-            border-radius: 0px 20px 20px 0px;
-            border-color: #e0e0e6;
-            border-style: solid;
-            border-width: 1px;
-            background-color: #fafafc;
+        input {
+            padding: 20px;
+            margin: 5px;
+            width: 140px;
         }
     </style>
 </head>
 
 <body>
-    <div class="lightwindow">
-        <div class="gr" size="15px"></div>
+    <div class="m">
+        <input class="sto" size="15px"></input>/100гр<br>
+        <input class="ccal" size="15px"></input>ккал<br>
+        <input class="gr" size="15px"></input>грамм
     </div>
-
-    <div class="darkWindow">
-        <input class="inp">
-        <input  readonly class="buttAdd" placeholder="Нужно"></input>
-    </div>
-
-
-    <main>
-        <!-- <input type="number" oninput="myClick()" class="ccal" size="15px"></input>Нужно ккал<br>
-        <input type="number" oninput="myClick()" class="sto" size="15px"></input>ккал/100гр<br>
-        <button onclick="myCar()">Сброс</button> -->
-
-    </main>
     <script>
-
-
+        document.querySelector(".sto").oninput = myCar
+        document.querySelector(".ccal").oninput = myClick
+        document.querySelector(".gr").oninput = mySoul
         function myCar() {
+            document.getElementsByClassName('gr')[0].value = null;
             document.getElementsByClassName('ccal')[0].value = null;
-            document.getElementsByClassName('sto')[0].value = null;
         }
         function myClick() {
-            let sto = document.querySelector(".sto").value;
-            let ccal = document.querySelector(".ccal").value;
-            let chet = Math.round(ccal / (sto / 100));
-            document.getElementsByClassName('gr')[0].innerHTML = chet
+            var sto = document.querySelector(".sto").value;
+            var ccal = document.querySelector(".ccal").value;
+            var chet = Math.round(ccal / (sto / 100));
+            document.getElementsByClassName('gr')[0].value = chet
         }
-
+        function mySoul() {
+            var sto = document.querySelector(".sto").value;
+            var gr = document.querySelector(".gr").value;
+            var chet = Math.round((sto / 100) * gr);
+            document.getElementsByClassName('ccal')[0].value = chet;
+        }
     </script>
+
+</body>
 
 </body>
 
