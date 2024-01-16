@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="icon" href="calorie.png">
+    <link rel="icon" href="calorie.ico">
     <title>Calorie</title>
     <style>
         main {
@@ -37,9 +37,9 @@
             document.getElementsByClassName('sto')[0].value = null;
         }
         function myClick() {
-            var sto = document.querySelector(".sto").value;
-            var ccal = document.querySelector(".ccal").value;
-            var chet = Math.round(ccal / (sto / 100));
+            let sto = document.querySelector(".sto").value;
+            let ccal = document.querySelector(".ccal").value;
+            let chet = Math.round(ccal / (sto / 100));
             document.getElementsByClassName('gr')[0].innerHTML = chet
         }
 
