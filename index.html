@@ -25,37 +25,46 @@
             font-size: 30px;
         }
 
+
+
         .darkWindow {
             border-color: #e0e0e6;
             border-style: solid;
             border-width: 1px;
             width: 300px;
-            height: 70px;
             background-color: #fafafc;
             margin-left: auto;
             margin-right: auto;
         }
 
+        .update {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40px;
+        }
 
-
-        .inp {
-            width: 200px;
+        #inp {
+            width: 175px;
             height: 30px;
             border-radius: 20px 0px 0px 20px;
             border-color: #e0e0e6;
             border-style: solid;
             border-width: 1px;
+            margin: 0px 0px 15px 15px;
         }
 
-        .buttAdd {
+        #buttAdd {
             color: #a3a4a6;
             height: 30px;
-            width: 50px;
+            width: 80px;
             border-radius: 0px 20px 20px 0px;
             border-color: #e0e0e6;
             border-style: solid;
             border-width: 1px;
             background-color: #fafafc;
+            text-align: center;
         }
     </style>
 </head>
@@ -65,17 +74,20 @@
         <div class="gr" size="15px"></div>
     </div>
 
+
+
+
+
     <div class="darkWindow">
-        <input class="inp"><input readonly class="buttAdd" placeholder="Нужно"></input>
+        <div class="update" onclick="myCar()">
+            <img src="update.png" width="43px">
+        </div>
+        <input id="inp" type="number" oninput="myClick()" class="sto"><input readonly id="buttAdd"
+            placeholder="ккал/100гр"></input>
+        <input id="inp" type="number" oninput="myClick()" class="ccal"><input readonly id="buttAdd"
+            placeholder="Нужно ккал"></input>
     </div>
 
-
-    <main>
-        <!-- <input type="number" oninput="myClick()" class="ccal" size="15px"></input>Нужно ккал<br>
-        <input type="number" oninput="myClick()" class="sto" size="15px"></input>ккал/100гр<br>
-        <button onclick="myCar()">Сброс</button> -->
-
-    </main>
     <script>
 
 
