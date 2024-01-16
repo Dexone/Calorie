@@ -7,27 +7,42 @@
     <link rel="icon" href="calorie.ico">
     <title>Calorie</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
         main {
             width: 380px;
             margin-left: auto;
             margin-right: auto;
-            background-color: rgb(77, 77, 77);
+            background-color: aliceblue;
         }
 
         input {
-            margin-bottom: 5px;
-            width: 140px;
+            margin-bottom: 10px;
+            margin-right: 5px;
+            width: 280px;
             height: 30px;
+        }
+
+        button{
+           width: 380px;
+           height: 40px;
+           margin-bottom: 10px;
+        }
+        div{
+            font-family: 'Orbitron', sans-serif;
+            border: 1px solid;
+            font-size: 30px;
+            text-align: center;
+            height: 40px;
         }
     </style>
 </head>
 
 <body>
     <main>
-        <input oninput="myClick()" class="ccal" size="15px"></input>Нужно<br>
-        <input oninput="myClick()" class="sto" size="15px"></input>/100гр<br>
+        <input oninput="myClick()" class="ccal" size="15px"></input>Нужно ккал<br>
+        <input oninput="myClick()" class="sto" size="15px"></input>ккал/100гр<br>
         <button onclick="myCar()">Сброс</button>
-        <a class="gr" size="15px"></a>грамм
+        <div class="gr" size="15px"></div>
     </main>
     <script>
 
